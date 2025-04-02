@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CM to MM convertor</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0; 
+        }
+        body{
+            background-color: black;
+        }
+       h1{
+        color: white;
+        text-align: center;
+        margin-top: 50px;
+       }
+       .container{
+        margin: auto;
+        border: 1px solid white;
+        width: 20%;
+        height: 45%;
+        background-color: white;
+        border-radius: 2px;
+        margin-top: 40px;
+        text-align: center;
+        box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.8);
+        color: black;
+    }
+    input[type="text"]{
+        width: 85%;
+        height: 10%;
+        margin-top: 30px;
+        border: 1px solid black;
+        border-radius: 2px;
+    }
+    button{
+        width: 85%;
+        height: 10%;
+        margin-top: 30px;
+        border: 1px solid black;
+        border-radius: 2px; 
+        color: white;
+        background-color: black;
+        cursor: pointer;
+        font-style: normal;
+    }
+    button:hover{
+        background-color: gray;
+        transition: 0.5s;
+        color: black;
+    }
+    p{
+        margin-top: 60px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <h1>CM to MM Convertor</h1>
+    <div class="container">
+        <!-- <p>Enter a  Number</p> -->
+        <input type="text" id="value" placeholder="Enter a value in cm">
+        <button onclick="convertToMM()">Convert to MM</button>
+        <p id="result"></p>
+    </div>
+    
+    <script>
+     
+     function convertToMM(){
+        const input = document.getElementById("value").value;
+        var result= input * 10;
+        document.getElementById("result").innerHTML=result;
+     }
+    </script>
+
+</body>
+</html>
