@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Find Largest Integer </h1>
+<input type='number' id='value1' placeholder='Enter a first number'> <br> <br>
+<input type='number' id='value2' placeholder='Enter a second number'> <br> <br>
+<p id='result'></p>
+<button onclick='findLarInt()'>Find a large Integer</button>
+<script>
+function findLarInt(){
+const intput1 = Number(document.getElementById('value1').value);
+const intput2 = Number(document.getElementById('value2').value);
+const result=document.getElementById('result');
+findInt(intput1, intput2);
+}
+function findInt(num1,num2){
+{
+if(num1===num2){
+return result.innerHTML = "Both integers are equal";    
+}
+}
+if(num1>num2){
+return result.innerHTML = "First Integer is highest number ";
+// return result
+}
+else{
+return result.innerHTML = "Second Integer is highest number ";
+// return result
+}}
+</script>
+</body>
+</html>
