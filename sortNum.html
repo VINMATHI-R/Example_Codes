@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Sorting Numbers</h1>
+  <input type="number" id="value1" placeholder="Enter number1"><br><br>
+  <input type="number" id="value2" placeholder="Enter number2"><br><br>
+  <input type="number" id="value3" placeholder="Enter number3"><br><br>
+  <button onclick="sortnum()">Click to sort</button><br><br>
+  <h3 id ="result"></h3>
+    <script>
+      function sortnum(){
+      const input1=Number(document.getElementById('value1').value);
+      const input2=Number(document.getElementById('value2').value);
+      const input3=Number(document.getElementById('value3').value);
+      
+      sortInt(input1,input2,input3);
+    }
+    function sortInt(num1,num2,num3){
+      let result=document.getElementById("result");
+      if(num1>num2 && num1>num3){
+        if(num2>num3){
+          result.innerHTML=`${num1},${num2},${num3}`;
+        }
+        else{result.innerHTML=`${num1},${num3},${num2}`;
+            }}
+      else if(num2>num3 && num2>num1){
+        if(num3>num1){
+          result.innerHTML=`${num2},${num3},${num1}`;
+        }
+        else{result.innerHTML=`${num2},${num1},${num3}`;
+            }}
+      if(num3>num2 && num3>num1){
+        if(num1>num2){
+          result.innerHTML=`${num3},${num1},${num2}`;
+        }
+        else{result.innerHTML=`${num3},${num2},${num1}`;
+            }}
+    }
+//         function sortNum(){
+//   const input1=parseFloat(prompt("Enter first number"));
+//   const input2=parseFloat(prompt("Enter second number"));
+//   const input3=parseFloat(prompt("Enter third number"));
+  
+//   function sortInt(num1,num2,num3){
+    
+//     if(num1>num2 && num1>num3){
+//       if(num2>num3){
+//         alert(num1 + "," +num2+ "," +num3);
+//       }
+//       else{
+//     alert(num1 + "," +num3+ "," +num2);
+//   }}
+//     if(num2>num3 && num2>num1){
+//       if(num3>num1){
+//         alert(num2 + "," +num3+ "," +num1);
+//       }
+//       else{
+//     alert(num2 + "," +num1+ "," +num3);
+//   }}
+//     if(num3>num1 && num3>num2){
+//       if(num1>num2){l
+//         alert(num3 + "," +num1+ "," +num2);
+//       }
+//       else{
+//     alert(num3 + "," +num2+ "," +num1);
+//   }}}
+//   sortInt(input1,input2,input3)
+// }
+// sortNum()
+  
+    </script>
+</body>
+</html>
