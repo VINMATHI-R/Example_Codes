@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce Method</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5]
+        let initialVal = 0;
+        for(i=0;i<arr.length;i++){
+            initialVal= initialVal+arr[i];
+        }
+        console.log(initialVal);
+
+        let reduceArray=arr.reduce((acc,curEle,index,arr)=>{return acc+curEle},0);
+        console.log(reduceArray)
+
+        let employees = [
+        {eName: "Vin", salary:1000},
+        {eName: "Mathi", salary:2000},
+        {eName: "Raji", salary:6000}]
+
+        let reduceArray1 = employees.reduce((acc, cEle)=>{return acc+cEle.salary},0);
+        console.log(reduceArray1);
+        
+    </script>
+</body>
+</html>
