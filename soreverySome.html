@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // sort():
+        let arr = [15,69,100,85,36,51];
+        let sortAsc =arr.sort((a,b)=>{return a-b});
+        console.log(sortAsc); 
+
+        let sortDesc = arr.sort((a,b)=>{return b-a});
+        console.log(sortDesc);
+
+        // Some() and Every():
+        let arrNum = [5,3,71,90,60];
+        
+        let everArray = arrNum.every((val,index,arr)=>{return val%2===0})
+        console.log(everArray);
+
+        let somArray = arrNum.some((val,index,arr)=>{return val%2===0});
+        console.log(somArray);
+    </script>
+</body>
+</html>
