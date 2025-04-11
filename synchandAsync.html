@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous functions</title>
+</head>
+<body>
+    <script>
+        // Ex1:
+        function f1(){
+            console.log("First");
+            }
+            function f2(){
+            console.log("Second");
+            }
+            function f3(){
+            console.log("Third");
+            }
+            f1();
+            setTimeout (f2,3000);
+            f3();
+
+            // Ex2:
+            console.log("Start");
+            setTimeout(()=>{
+            console.log("This starts after 2 seconds");
+            },2000);
+            console.log("End");
+
+            // Ex3:
+            let count = 0;
+            let Interval = setInterval(()=>{
+            count++;
+            console.log("Count:" +count);
+            if(count===5){
+            clearInterval(Interval);    // Stop after 5 times
+            console.log("Done!");
+            }
+            },1000) // runs every 1 second
+ 
+
+    </script>
+</body>
+</html>
