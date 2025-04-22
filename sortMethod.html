@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+ <script>
+    // sorting method ascending order
+   let arr = [8,100,50,20,90];
+   let sortAsc = arr.sort((a,b)=>{return a-b});
+   document.write(sortAsc+"<br>");
+  // document.write(`${sortAsc}`);
+
+    // sorting method descending order 
+  let sortdesc = arr.sort((a,b)=>{return b-a});
+  document.write(sortdesc+"<br>");
+
+  // Example3: Sorting an Array of Objects Based on a Property
+  let employees = [{name:"Vin", salary:60000},
+  {name:"Mathi", salary:70000},{name:"Raji", salary:80000}
+  ];
+  let empAsc = employees.sort((a,b)=>{a.salary-b.salary});
+  empAsc.forEach(empSalary=>document.write(`${empSalary.name},${empSalary.salary}<br>`));
+
+  // Example:
+  let fruits = ["banana", "Apple", "orange", "Grapes"];
+  let fruitSort = fruits.sort((a,b)=>{return a-b});
+  document.write(fruitSort+"<br>");
+
+  // Sorting an Array of Strings (Case-insensitive)
+  let fruitSort1 = fruits.sort((a,b)=>{return a.toLowerCase().localeCompare(b.toLowerCase())});
+  document.write(fruitSort1+"<br>");
+
+  // Sorting Numbers with a Custom Comparator (Handling Decimal Numbers)
+  let decimal = [0.9,2.3,8.1,3.6,9.2];
+  let sortDeci = decimal.sort((a,b)=>a-b);
+  document.write(sortDeci+"<br>");
+  
+  // Sorting Strings by Length (Ascending Order)
+  let flower = ["Jasmine", "Lilly", "Rose", "Sunflower"];
+  let sortFlower = flower.sort((a,b)=>{return a.length-b.length});
+  document.write(sortFlower+"<br><br>");
+
+  // Sorting an Array of Dates
+  let dates = [ new Date(2021,5,3), new Date(2023,6,9), new Date(2022,9,1), new Date(2024,4,2) ];
+  let sortDate = dates.sort((a,b)=>a-b);
+  // document.write(sortDate+"<br>");
+  sortDate.forEach(date =>document.write( date.toDateString() +"<br>"));
+
+  // Sorting Objects by Multiple Properties (First by Age, Then by Name)
+  let people = [{name:"Vin", Age:24},
+  {name:"Mathi", Age:23},{name:"Raji", Age:24},{name:"Rama", Age:22}
+  ];
+  let sortPeople = people.sort((a,b)=>
+    {
+      if (a.Age===b.Age) {
+        return a.name.localeCompare(b.name);
+      }
+      return a.Age-b.Age;
+  });
+  sortPeople.forEach((empName)=>document.write(`${empName.name} ${empName.Age}`));
+
+</script>
+</body>
+</html>
