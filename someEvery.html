@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some Every Method</title>
+</head>
+<body>
+    <script>
+    
+        // Some() Method:
+        document.write("Some Method"+"<br>");
+        let arrNum = [5,3,71,90,60];
+        
+        // Example: Check if an array contains at least one even number
+        let everArray = arrNum.some((val,index,arr)=>{return val%2===0})
+        document.write(everArray+"<br>");
+
+        // Example: Check if any number is greater than 10
+        let someGreat = arrNum.some(num => num>10);
+        document.write(someGreat+"<br>");
+
+        // Check if an array contains at least one even number
+        let users = [{name:"Vin", role:"Admin"}, {name:"Mathi", role:"user"}, {name:"Vin", role:"user"}];
+        let checkAdmin = users.some(user => user.role === "Admin");
+        document.write(checkAdmin+"<br>");
+
+        // Check if any word is longer than 5 letters
+        let word = ["Earth", "Sun", "Mercury", "Venus"];
+        let checkWord = word.some(word => word.length>5);
+        document.write(checkWord+"<br><br>");
+
+        // Every() Method:
+
+        document.write("Every Methos"+"<br>");
+
+        let somArray = arrNum.every((val,index,arr)=>{return val%2===0});
+        document.write(somArray+"<br>");
+
+        // Example: Check all number is greater than 10
+        let everyGreat = arrNum.every(numb => numb > 10);
+        document.write(everyGreat+"<br>");
+
+        // Check if all strings have more than 3 characters
+        let flower = ["Rose", "Lilly", "Lotuss", "Jasmine"];
+        let flowerSome = flower.every(flr => flr>5);
+        document.write(flowerSome+"<br>");
+
+        // Check all are Adults
+        let Adults = [{name:"Vin", Age:"26"}, {name:"Mathi", Age:"19"}, {name:"Raji", Age:"20"}];
+        let adultSome = Adults.some(adult => adult.Age>18);
+        document.write(adultSome+"<br>");
+
+        // Edge case - empty array: every on empty returns tru
+        let array = [];
+        let result = array.every(arr => arr >10);
+        document.write(result+"<br>");
+
+        // Using thisArg in every()
+        const checkAge ={
+            minAge : 18,
+            isAdult(user){
+                return user.age >= this.minAge;
+            } 
+        }
+        const person = [{age:20}, {age:25}, {age:30}];
+        const result1 = person.every(checkAge.isAdult, checkAge);
+        document.write(result1+"<br>");
+
+
+    </script>
+</body>
+</html>
