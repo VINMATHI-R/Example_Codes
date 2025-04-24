@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+// //    Shallow copy:
+
+//     let person={
+//         name:"Vin",
+//         role:"Developer",
+//         Hobbies:{
+//             Cricket:'T20 player',
+//             Football:"60 mins"
+//         }
+//     }
+//     let person2={...person,Hobbies:{...person.Hobbies}};
+//     let newArray1=JSON.parse(JSON.stringify(person));
+//     person.role="You tuber";
+//     person.Hobbies.Cricket="ODI Player";
+//     console.log(person,person2);
+
+//     let person3=JSON.stringify(person);
+//     console.log(person3);
+    
+//     let newArray = JSON.parse(person3);
+//     console.log(newArray);
+
+//     //    Shallow copy:
+    
+//     let arr=[1,2,3,[4,5,6]];
+//     let arr2=[...arr];
+//     let newArray4=JSON.parse(JSON.stringify(arr));
+//     arr[0]='One';
+//     arr[3][0]='Four';
+//     newArray4[3][0]='Four';
+//     console.log(arr,arr2);
+//     console.log(newArray4);
+    
+    // Ex: 1
+    let arr = 10;
+    let arr1 = arr;
+    document.write(arr,arr1+"<br>");
+    arr = 20;
+    document.write(arr,arr1+"<br>");
+
+  //  Example2:
+    let obj = {name:"Vin"};
+    let obj1 = {...obj};
+    document.write(JSON.stringify(obj), JSON.stringify(obj1)+"<br>");
+    obj.name="Mathi";
+    document.write(JSON.stringify(obj), JSON.stringify(obj1)+"<br>");
+    
+    // Example3:
+    let num = [1,2,3,[1,2,3]];
+    let num2 = num;
+    document.write(num, num2+"<br>");
+    num=[1,2,3,[4,5,6]];
+    document.write(num, num2+"<br>");
+
+    // Example4:
+    let obj2={
+      name:"Vin", 
+      role:"developer"
+    }
+    let obj3 = {...obj2};
+    document.write(JSON.stringify(obj2),JSON.stringify(obj3)+"<br>");
+    obj2.role="writer";
+    document.write(JSON.stringify(obj2),JSON.stringify(obj3)+"<br>");
+
+    // Example5:
+    let obj4={
+      name:"Vin",
+      role:"developer",
+        Hobbies:{
+          song:"carnatic",
+          music:"melody"
+      }
+    };
+    let obj5 = {...obj4,Hobbies:{...obj4.Hobbies}};
+    document.write(JSON.stringify(obj4),JSON.stringify(obj5)+"<br>");
+    obj4.Hobbies.song="western";
+    document.write(JSON.stringify(obj4),JSON.stringify(obj5)+"<br>");
+
+    // Example: Deep Copy using JSON.parse(JSON.stringify(...))
+      let original = {
+      name:"Vin",
+      role:"developer",
+      hobbies:{
+        song: "carnatic",
+        music: "melody"
+      }
+    };
+    let original1 = JSON.parse(JSON.stringify(original));
+    original1.hobbies.music="western";
+    document.write(JSON.stringify(original)+"<br>");
+    // output: {"name":"Vin","role":"developer","hobbies":{"song":"carnatic","music":"melody"}}
+
+    document.write(JSON.stringify(original1)+"<br>");
+    // output: {"name":"Vin","role":"developer","hobbies":{"song":"carnatic","music":"western"}}
+    
+        
+    </script>
+    
+</body>
+</html>
