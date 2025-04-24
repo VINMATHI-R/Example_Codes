@@ -38,6 +38,53 @@
             }
             },1000) // runs every 1 second
  
+            // Ex4: Promises — Handling Async Results
+            // ".then() is used to get the value after the promise is done."
+            let promise = new Promise((resolve, reject) =>{
+            setTimeout(()=>{
+            resolve("Promise resolved");
+            }, 1000);
+            });
+            promise.then(result =>{
+            console.log(result);
+            });
+
+            // Ex5:
+            async function getuserdata(){
+            console.log("Fetching Data ....");
+            let response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+            let data = await response.json();
+            console.log("Name:"+data.name);
+            console.log("User name:" +data.username);
+            console.log("Email:"+data.email);  
+            }  
+            getuserdata();
+            console.log("Other tasks are running");
+
+            // Example 6:
+            function fakeLogin(username, password) {
+            return new Promise((resolve, reject) => {
+            setTimeout(()=>{
+            if (username=='Admin' && password =='1234'){
+            resolve("Login Successfull");
+            } 
+            else{
+            reject("Login Failed");
+            }
+            }, 2000);
+            })
+            }
+
+            async function Login(){
+            try{
+            let message = await fakeLogin('Admin','1334');
+            console.log(message);
+            }
+            catch(err){
+            console.log(err);
+            }
+            }
+            Login();
 
     </script>
 </body>
