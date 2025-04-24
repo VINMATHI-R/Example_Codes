@@ -13,17 +13,52 @@
         }
         console.log(initialVal);
 
-        let reduceArray=arr.reduce((acc,curEle,index,arr)=>{return acc+curEle},0);
-        console.log(reduceArray)
-
+        // Examble: Sum of numbers
+        let reduceArray = arr.reduce((acc, curEle) => acc+curEle, 0);
+        document.write(reduceArray+"<br>");
+  
+        // Example: find sum of employee salary
         let employees = [
         {eName: "Vin", salary:1000},
         {eName: "Mathi", salary:2000},
         {eName: "Raji", salary:6000}]
 
         let reduceArray1 = employees.reduce((acc, cEle)=>{return acc+cEle.salary},0);
-        console.log(reduceArray1);
+        document.write(reduceArray1+"<br>");
+    
+        // Find the maximum number
+        let num = [3,7,9,2,6,11];
+        let reduceNum = num.reduce((acc, curr)=>curr>acc ? curr:acc, num[0]);
+        document.write(reduceNum +"<br>");
+
+        // Example: Count of Occurance
+        let fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+        let reduceFruit = fruits.reduce((acc,fruit)=>{
+            acc[fruit]=(acc[fruit] || 0)+1;
+            return acc;
+        }, {});
+        // document.write(JSON.stringify(reduceFruit));
+        let output = "<ul>";
+        for(let fruit in reduceFruit){
+            output += `<li>${fruit}: ${reduceFruit[fruit]}</li>`;
+        }
+        output +="</ul>"
+        document.write(output+"<br>");
+
+        // Example: Flatten an array of arrays
+        let nested = [[1,2],[3,4],[5]];
+        let flat = nested.reduce((acc,nest)=>acc.concat(nest),[]);
+        document.write(flat+"<br>"); 
         
+        // Example: Convert array of objects to a single object
+        let users = [{id:1, name:'Vin'}, {id:2, name:'Raji'}, {id:3, name:'Mathi'}];
+        let reduceUser = users.reduce((acc,user)=>{acc[user.id]=user.name;
+            return acc;
+        }, {});
+        for(let id in reduceUser){
+            document.write(`ID:${id} Name:${reduceUser[id]}<br>`);
+        }
+
     </script>
 </body>
 </html>
