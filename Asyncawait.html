@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Example1");
+        
+        // Example: Basic async/await with a Promise
+        function fetchData(){
+          return new Promise((resolve, reject) => {
+            setTimeout(()=>{
+              let DataFetching = false;
+                if(DataFetching){
+                  resolve("Data fetched!");
+                }
+                else{
+                  reject("Data not fetched");
+                }
+            }, 2000);
+          });
+        }
+    
+        async function getData(){
+          try{
+          console.log("Fetching Data ...");
+          let result = await fetchData();
+          let newResult = await result;
+          console.log("Result:", result);
+          console.log("newResult:", newResult);
+          }
+          catch(err){
+              console.log("Error:", err); 
+          }
+        }
+        console.log("Welcome");
+        getData();
+
+        console.log("Example2");
+        
+        // Example2: Try-Catch for Error Handling
+        function adminLogin(user){
+            return new Promise((admin, users) => {
+                setTimeout(()=>{
+                    if(user==="Admin"){
+                        admin("Login successful");
+                    }
+                    else{
+                        users("Login failed");
+                    }
+                }, 3000);
+            });
+        }
+
+        async function Login(){
+            try{
+            let message = await adminLogin("Admin");
+            console.log(message);
+            }
+            catch(err){
+                console.log(err);
+                 }
+            finally{
+                console.log("End");  
+            }
+        }
+        Login();
+
+        // Example3: Chaining Multiple Async Calls
+
+        function stepOne(){
+      return new Promise((resolve) => {
+        setTimeout(()=>{
+          resolve("Step One completed");
+        })
+      })
+    }
+
+    function stepTwo(){
+      return new Promise((resolve) => {
+        setTimeout(()=>{
+          resolve("Step two completed");
+        })
+      })
+    }
+
+    async function steps() {
+       const msg1 = await stepOne();
+       console.log(msg1);
+
+       const msg2 = await stepTwo();
+       console.log(msg2);
+       }
+
+       steps();
+
+    //    Example4: Using await inside a loop
+
+    function delay(ms){
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function looping(){
+      for(i=0;i<=4;i++){
+        await delay(2000);
+        console.log(`count: ${i}`);
+      }
+      }
+      console.log("Loading...!");
+    looping();
+
+      </script>  
+</body>
+</html>
