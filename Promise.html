@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Example: Simulating a data fetch with a Promise
+     let newPromise= new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let dataReceived = true;
+        if(dataReceived){
+            resolve("Data fetched successfully!");
+        }
+        else{
+            reject("Error fetching data.");
+        }
+        }, 3000);
+     })
+     newPromise.then((message)=>{
+        console.log("Success:" +message);
+     })
+     .catch((error)=>{
+       console.log("Error:" +error);
+     })
+     .finally(()=>{
+        console.log("End"); 
+     })
+
+    </script>
+</body>
+</html>
